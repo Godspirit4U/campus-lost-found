@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Account settings | Campus Lost and Found</title>
+</head>
+<body>
+  <div class="app">
+    <div id="site-header"></div>
+    <div class="app-main">
+      <div id="topbar"></div>
+
+      <main>
+        <section class="page-head">
+          <div class="container">
+            <h1>Account settings</h1>
+            <p>Your details and your password.</p>
+          </div>
+        </section>
+
+        <section class="section section--tight">
+          <div class="container">
+            <div class="chart-grid" style="grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:start">
+
+              <form class="card" id="profile-form" novalidate>
+                <div class="card-head">
+                  <div>
+                    <h2 style="font-size:1.15rem;margin:0 0 4px">Your details</h2>
+                    <p class="muted" style="margin:0;font-size:.88rem">This is what the desk sees when you post an item.</p>
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div class="field full">
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name">
+                  </div>
+                  <div class="field full">
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" maxlength="20" autocomplete="tel" placeholder="Optional">
+                    <div class="hint">Shown only to the lost and found desk, never on your public listings.</div>
+                  </div>
+                  <div class="field">
+                    <label for="email-view">Email</label>
+                    <input id="email-view" type="email" disabled>
+                    <div class="hint">Cannot be changed here. Contact the desk if it is wrong.</div>
+                  </div>
+                  <div class="field">
+                    <label for="prn-view">PRN</label>
+                    <input id="prn-view" type="text" disabled>
+                  </div>
+                  <div class="field full">
+                    <label for="role-view">Account type</label>
+                    <input id="role-view" type="text" disabled>
+                    <div class="hint">Roles are assigned by the lost and found desk, not from this page.</div>
+                  </div>
+                </div>
+
+                <div id="profile-msg"></div>
+                <button class="btn btn-primary" type="submit">Save changes</button>
+              </form>
+
+              <div class="stack">
+                <form class="card" id="password-form" novalidate>
+                  <div class="card-head">
+                    <div>
+                      <h2 style="font-size:1.15rem;margin:0 0 4px">Change password</h2>
+                      <p class="muted" style="margin:0;font-size:.88rem">Other devices will be signed out.</p>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="current">Current password</label>
+                    <div class="input-icon">
+                      <input id="current" name="current" type="password" required autocomplete="current-password">
+                      <button class="input-action" type="button" data-reveal="current" aria-label="Show password"></button>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="next">New password</label>
+                    <div class="input-icon">
+                      <input id="next" name="next" type="password" required minlength="8" autocomplete="new-password">
+                      <button class="input-action" type="button" data-reveal="next" aria-label="Show password"></button>
+                    </div>
+                    <div class="hint">At least 8 characters, including one number.</div>
+                  </div>
+                  <div class="field">
+                    <label for="confirm">Confirm new password</label>
+                    <div class="input-icon">
+                      <input id="confirm" name="confirm" type="password" required minlength="8" autocomplete="new-password">
+                      <button class="input-action" type="button" data-reveal="confirm" aria-label="Show password"></button>
+                    </div>
+                  </div>
+
+                  <div id="password-msg"></div>
+                  <button class="btn btn-primary btn-block" type="submit">Update password</button>
+                </form>
+
+                <div class="card card--pad">
+                  <h3 style="font-size:.98rem">Forgot your current password?</h3>
+                  <p class="muted" style="font-size:.86rem;margin:0 0 12px">
+                    If you cannot remember it, sign out and use the reset link on the sign-in page.
+                  </p>
+                  <a class="btn btn-sm" href="/forgot-password.html">Reset with a code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <span>Campus Lost and Found Portal</span>
+          <span>Sai University</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="/js/account.js"></script>
+</body>
+</html>

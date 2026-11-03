@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Report an item | Campus Lost and Found</title>
+</head>
+<body>
+  <div class="app">
+    <div id="site-header"></div>
+    <div class="app-main">
+      <div id="topbar"></div>
+
+      <main>
+        <section class="page-head">
+          <div class="container container--narrow">
+            <h1 id="page-title">Report an item</h1>
+            <p id="page-subtitle">Your report goes live immediately. The desk can take it down if it breaks the rules.</p>
+          </div>
+        </section>
+
+        <section class="section section--tight">
+          <div class="container container--narrow">
+            <form class="card" id="report-form" novalidate>
+              <fieldset class="form-section">
+                <legend>What are you reporting?</legend>
+                <p class="section-note">Pick one. This decides how the listing is shown and who gets matched against it.</p>
+                <div class="choice-row">
+                  <label class="choice" id="card-lost">
+                    <input type="radio" name="type" value="lost" checked>
+                    <span>I lost something<small>Something of mine has gone missing</small></span>
+                  </label>
+                  <label class="choice" id="card-found">
+                    <input type="radio" name="type" value="found">
+                    <span>I found something<small>I picked up an item that is not mine</small></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Item basics</legend>
+                <p class="section-note">Enough detail for someone to recognise it as theirs.</p>
+                <div class="form-grid">
+                  <div class="field full">
+                    <label for="title">Item name <span class="req">*</span></label>
+                    <input id="title" name="title" type="text" required minlength="3" maxlength="120"
+                      placeholder="Black wired earphones">
+                  </div>
+                  <div class="field">
+                    <label for="category">Category <span class="req">*</span></label>
+                    <select id="category" name="category" required></select>
+                  </div>
+                  <div class="field">
+                    <label for="colour">Colour</label>
+                    <input id="colour" name="colour" type="text" maxlength="40" placeholder="Black">
+                  </div>
+                  <div class="field">
+                    <label for="brand">Brand</label>
+                    <input id="brand" name="brand" type="text" maxlength="60" placeholder="Boat">
+                  </div>
+                  <div class="field">
+                    <label for="dateOccurred" id="date-label">Date lost <span class="req">*</span></label>
+                    <input id="dateOccurred" name="dateOccurred" type="date" required>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Where it happened</legend>
+                <p class="section-note">The building is used for filters and for matching against other reports.</p>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="building">Campus building <span class="req">*</span></label>
+                    <select id="building" name="building" required></select>
+                  </div>
+                  <div class="field">
+                    <label for="locationDetail">Specific spot</label>
+                    <input id="locationDetail" name="locationDetail" type="text" maxlength="200"
+                      placeholder="Library reading room, table 7">
+                  </div>
+                  <div class="field full">
+                    <label for="description">Description <span class="req">*</span></label>
+                    <textarea id="description" name="description" required minlength="10" maxlength="2000"
+                      placeholder="Colour, size, what it was kept in, anything that helps someone recognise it."></textarea>
+                    <div class="hint">At least 10 characters. Be specific, but leave the identifying detail below.</div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Proof of ownership</legend>
+                <p class="section-note">Only you and the lost and found desk see this. A claimant must describe it to collect the item.</p>
+                <div class="field">
+                  <label for="privateDetail">Private identifying detail <span class="req" id="private-req"></span></label>
+                  <input id="privateDetail" name="privateDetail" type="text" maxlength="500"
+                    placeholder="A scratch on the right earbud">
+                  <div class="hint" id="private-hint">
+                    For found items this is required, because it is what a claimant has to describe to prove the item is theirs.
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="form-section">
+                <legend>Photos</legend>
+                <p class="section-note">Up to three images. They help far more than a long description.</p>
+                <div id="existing-images" class="hidden" style="margin-bottom:14px">
+                  <div class="hint" style="margin-bottom:8px">Current photos. Untick one to remove it when you save.</div>
+                  <div class="thumbs" id="existing-thumbs"></div>
+                </div>
+                <label class="upload-zone" for="images" id="upload-zone">
+                  <span id="upload-icon"></span>
+                  <p><strong>Click to add photos</strong></p>
+                  <span>JPEG, PNG or WebP. Up to 5 MB each, three files maximum.</span>
+                  <input id="images" name="images" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+                </label>
+                <div class="thumbs" id="new-thumbs"></div>
+              </fieldset>
+
+              <div id="form-errors"></div>
+              <div class="row" style="margin-top:4px">
+                <button class="btn btn-primary btn-lg" type="submit" id="submit-btn">Publish report</button>
+                <a class="btn btn-ghost btn-lg" href="/dashboard.html" id="cancel-link">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <span>Campus Lost and Found Portal</span>
+          <span>Sai University</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="/js/report.js"></script>
+</body>
+</html>

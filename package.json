@@ -1,0 +1,35 @@
+{
+  "name": "campus-lost-found",
+  "version": "1.0.0",
+  "description": "Campus Lost and Found Portal - full-stack web application (Node.js, Express, PostgreSQL on Supabase)",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:sync": "node src/scripts/sync.js",
+    "seed": "node src/seed.js",
+    "test": "node --test tests/"
+  },
+  "keywords": ["lost-and-found", "express", "postgresql", "supabase", "campus"],
+  "author": "Sivaharsha Sottu",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.12.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "pg-mem": "^3.0.3",
+    "supertest": "^7.0.0"
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Browse items | Campus Lost and Found</title>
+</head>
+<body>
+  <div class="app">
+    <div id="site-header"></div>
+    <div class="app-main">
+      <div id="topbar"></div>
+
+      <main>
+        <section class="page-head">
+          <div class="container">
+            <h1>Explore items</h1>
+            <p>Every listing currently on campus. Narrow it down however you like.</p>
+          </div>
+        </section>
+
+        <section class="section section--tight">
+          <div class="container">
+            <form class="card card--pad" id="filter-form" style="margin-bottom:22px">
+              <div class="explore-bar">
+                <div class="field explore-search">
+                  <label for="f-q" class="sr-only">Keyword</label>
+                  <div class="input-icon">
+                    <input id="f-q" name="q" type="search" placeholder="Search by item, brand, colour or building">
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="f-type" class="sr-only">Listing type</label>
+                  <select id="f-type" name="type">
+                    <option value="">Lost and found</option>
+                    <option value="lost">Lost only</option>
+                    <option value="found">Found only</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="f-category" class="sr-only">Category</label>
+                  <select id="f-category" name="category"><option value="">All categories</option></select>
+                </div>
+                <div class="field">
+                  <label for="f-building" class="sr-only">Building</label>
+                  <select id="f-building" name="building"><option value="">All buildings</option></select>
+                </div>
+                <div class="field">
+                  <label for="f-sort" class="sr-only">Sort by</label>
+                  <select id="f-sort" name="sort">
+                    <option value="newest">Newest first</option>
+                    <option value="oldest">Oldest first</option>
+                    <option value="date_desc">Date, newest</option>
+                    <option value="date_asc">Date, oldest</option>
+                    <option value="title_asc">Title, A to Z</option>
+                    <option value="title_desc">Title, Z to A</option>
+                  </select>
+                </div>
+                <button class="btn btn-primary" type="submit">Search</button>
+                <button class="btn btn-quiet btn-sm" type="button" id="more-filters">More filters</button>
+              </div>
+
+              <div class="explore-extra hidden" id="explore-extra">
+                <div class="field">
+                  <label for="f-from">From date</label>
+                  <input id="f-from" name="from" type="date">
+                </div>
+                <div class="field">
+                  <label for="f-to">To date</label>
+                  <input id="f-to" name="to" type="date">
+                </div>
+                <button class="btn btn-sm" type="reset" id="clear-filters">Clear all filters</button>
+              </div>
+            </form>
+
+            <div class="results-bar">
+              <span class="results-count" id="results-count"></span>
+              <span class="chips" id="quick-chips">
+                <button class="chip" data-quick="" type="button">Everything</button>
+                <button class="chip" data-quick="lost" type="button">Lost</button>
+                <button class="chip" data-quick="found" type="button">Found</button>
+              </span>
+            </div>
+
+            <div class="grid-items" id="results"></div>
+            <div class="pager" id="pager"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <span>Campus Lost and Found Portal</span>
+          <span>Sai University</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="/js/browse.js"></script>
+</body>
+</html>

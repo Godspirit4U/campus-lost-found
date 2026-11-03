@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Lost and found desk | Campus Lost and Found</title>
+</head>
+<body>
+  <div class="app">
+    <div id="site-header"></div>
+    <div class="app-main">
+      <div id="topbar"></div>
+
+      <main>
+        <section class="page-head">
+          <div class="container">
+            <div class="spread">
+              <div>
+                <h1>Lost and found desk</h1>
+                <p>Claims, listings and the numbers behind them.</p>
+              </div>
+              <button class="btn" id="refresh" type="button"></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--tight">
+          <div class="container">
+            <div class="tabs" role="tablist">
+              <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
+              <button role="tab" data-tab="claims">Claims queue <span id="claim-badge"></span></button>
+              <button role="tab" data-tab="listings">Listings</button>
+              <button role="tab" data-tab="people">People</button>
+              <button role="tab" data-tab="activity">Activity</button>
+            </div>
+            <div id="panel"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <span>Campus Lost and Found Portal</span>
+          <span>Desk console, Sai University</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

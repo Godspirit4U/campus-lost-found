@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Campus Lost and Found Portal | Sai University</title>
+  <meta name="description" content="Report a lost item, list something you found, and search everything handed in across the Sai University campus.">
+</head>
+<body>
+  <div class="app">
+    <div id="site-header"></div>
+    <div class="app-main">
+      <div id="topbar"></div>
+
+      <main>
+        <section class="hero">
+          <div class="container hero-inner">
+            <div class="hero-copy">
+              <span class="eyebrow">Sai University lost property</span>
+              <h1 class="hero-title">Lost it on campus? <em>Someone found it.</em></h1>
+              <p class="hero-lede">
+                Report what went missing, hand in what you picked up, and search everything
+                the campus has logged. Every claim is verified by the lost and found desk
+                before an item changes hands.
+              </p>
+
+              <form class="hero-search" id="hero-search" role="search">
+                <div class="input-icon" id="hero-search-icon">
+                  <label class="sr-only" for="hero-q">Search items</label>
+                  <input id="hero-q" name="q" type="search" placeholder="Search by item, brand, colour or building">
+                </div>
+                <button class="btn btn-primary" type="submit">Search</button>
+              </form>
+
+              <div class="hero-actions">
+                <a class="btn btn-lg" href="/browse.html">Browse all items</a>
+                <a class="btn btn-lg btn-ghost" href="/report.html" id="hero-report">Report an item</a>
+              </div>
+
+              <div class="hero-stats" id="hero-stats" aria-live="polite"></div>
+            </div>
+
+            <div class="hero-art" aria-hidden="true">
+              <div class="hero-card hero-card--1">
+                <div class="hc-thumb"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.8" cy="9.8" r="1.6"/><path d="m4 17.5 4.8-4.6 3.6 3.4 3-2.8 4.6 4"/></svg></div>
+                <div class="hc-body">
+                  <strong>Reported</strong>
+                  <span>Photographed and logged</span>
+                </div>
+              </div>
+              <div class="hero-card hero-card--2">
+                <div class="hc-thumb"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v6c0 4.5-3.2 7.7-7.5 9-4.3-1.3-7.5-4.5-7.5-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                <div class="hc-body">
+                  <strong>Verified</strong>
+                  <span>Claims checked by the desk</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <h2>Browse by category</h2>
+                <p>Jump straight to the kind of thing you are looking for.</p>
+              </div>
+              <a class="btn btn-ghost" href="/browse.html">See everything</a>
+            </div>
+            <div class="category-grid" id="category-grid"></div>
+          </div>
+        </section>
+
+        <section class="section" style="padding-top:0">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <h2>Recently reported</h2>
+                <p>The newest listings from around campus.</p>
+              </div>
+              <a class="btn" href="/browse.html">Browse all items</a>
+            </div>
+            <div class="grid-items" id="recent-items"></div>
+          </div>
+        </section>
+
+        <section class="section" style="padding-top:0">
+          <div class="container">
+            <div class="section-head">
+              <div>
+                <h2>How it works</h2>
+                <p>Three steps from missing to collected.</p>
+              </div>
+            </div>
+            <div class="steps">
+              <div class="step-card">
+                <span class="step-num">1</span>
+                <h3>Post the report</h3>
+                <p>Say what you lost or found, where it happened, and one detail only the real owner would know.</p>
+              </div>
+              <div class="step-card">
+                <span class="step-num">2</span>
+                <h3>Check the matches</h3>
+                <p>Every new report is compared against the rest of the catalogue, and likely matches are shown with the reasons.</p>
+              </div>
+              <div class="step-card">
+                <span class="step-num">3</span>
+                <h3>Collect at the desk</h3>
+                <p>Submit a claim, the desk verifies your detail, and you collect the item with a pickup code.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" style="padding-top:0">
+          <div class="container">
+            <div class="cta-band">
+              <div>
+                <h2>Found something that is not yours?</h2>
+                <p>Posting it takes a minute and it is the fastest way to get it back to its owner.</p>
+              </div>
+              <a class="btn btn-lg" href="/report.html?type=found">Report a found item</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">
+          <span>Campus Lost and Found Portal</span>
+          <span>Web Technology and Internet Programming project, Sai University</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="/js/home.js"></script>
+</body>
+</html>

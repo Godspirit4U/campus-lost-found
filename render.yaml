@@ -1,0 +1,26 @@
+# Render blueprint: deploy this repository as a single web service.
+# Render reads this file automatically when you open the deploy link.
+services:
+  - type: web
+    name: campus-lost-found
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Paste the Supabase connection string when Render prompts for it.
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_SSL
+        value: "true"
+      # Render generates a strong secret automatically.
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: ARCHIVE_AFTER_DAYS
+        value: "90"

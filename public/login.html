@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Sign in | Campus Lost and Found</title>
+</head>
+<body>
+  <div class="auth">
+    <aside class="auth-visual">
+      <a class="brand" href="/index.html">
+        <img class="brand-logo" src="/img/logo.svg" alt="" width="34" height="34">
+        <span class="brand-text"><b>Campus Lost &amp; Found</b><span>Sai University</span></span>
+      </a>
+      <div>
+        <div class="auth-quote">
+          <h2>Everything lost on campus, in one place.</h2>
+          <p>Report what went missing, hand in what you found, and collect what is yours at the desk.</p>
+        </div>
+        <div class="auth-points" id="auth-points"></div>
+      </div>
+      <p style="position:relative;z-index:1;font-size:.8rem;color:rgba(255,255,255,.65);margin:0">
+        Web Technology and Internet Programming project
+      </p>
+    </aside>
+
+    <main class="auth-panel">
+      <div class="auth-panel-top">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <span class="icon-moon"></span><span class="icon-sun"></span>
+        </button>
+      </div>
+      <div class="auth-form-wrap">
+        <div class="auth-card">
+          <h1>Welcome back</h1>
+          <p>Sign in with your campus email address.</p>
+          <form id="login-form" novalidate>
+            <div class="field">
+              <label for="email">Email</label>
+              <div class="input-icon" id="email-icon">
+                <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@saiuniversity.edu.in">
+              </div>
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <div class="input-icon">
+                <input id="password" name="password" type="password" required autocomplete="current-password" placeholder="Your password">
+                <button class="input-action" type="button" id="toggle-password" aria-label="Show password"></button>
+              </div>
+            </div>
+            <div class="spread" style="margin:-4px 0 16px">
+              <span></span>
+              <a href="/forgot-password.html" style="font-size:.85rem">Forgot password?</a>
+            </div>
+            <div id="login-error"></div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Sign in</button>
+          </form>
+          <p class="auth-foot">New here? <a href="/register.html">Create an account</a></p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/js/login.js"></script>
+</body>
+</html>
